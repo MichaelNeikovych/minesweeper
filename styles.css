@@ -1,0 +1,61 @@
+:root {
+    --size: 0;
+}
+
+* {
+    box-sizing: border-box;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    margin: 0;
+    height: auto;
+}
+
+.app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgb(76, 125, 84);
+    height: auto;
+    min-height: 100vh;
+}
+
+.board {
+    background: rgb(97, 90, 84);
+    display: grid;
+    grid-template-columns: repeat(var(--size), 50px);
+    grid-template-rows: repeat(10, 50px);
+    gap: 5px;
+    padding: 5px;
+}
+
+.board > * {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    border: 2px solid #bbb;
+    user-select: none;
+}
+
+.board > div[data-status="hidden"] {
+    background: rgb(77, 51, 34);
+    cursor: pointer;
+}
+
+.board > div[data-status="mine"] {
+    background: rgb(154, 40, 40);
+
+}
+.board > div[data-status="number"] {
+    /* background: rgb(131, 105, 88); */
+    background: none;
+}
+
+.board > div[data-status="marked"] {
+    background: rgb(255, 244, 125);
+    cursor: pointer;
+}
